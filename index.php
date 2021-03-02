@@ -1,15 +1,15 @@
 <?php
 if(isset($_POST["send"])){
   $FName=" First Name : ".$_POST["name"];
-  $LName=" Last Name : ".$_POST["phone"];
-  $Subject= "Subject";//$_POST["TxtValue3"];
-  $Email=" User Email :".$_POST["email"];
+  $LName=" Phone Number : ".$_POST["phone"];
+  $Subject= " Subject : ";$_POST["subject"];
+  $Email=" User Email : ".$_POST["email"];
   $Message=" User Message : ".$_POST["message"];
 
 
   $to = "hannanazam200@gmail.com";
 
-  $message = $FName .' '.$LName.' '.$Email.''.$Message;
+  $message = $FName .' '.$LName.' '.$Subject.' '.$Email.''.$Message;
 
   $from = "hannanazam200@gmail.com";
   $headers = "From:" . $from;
@@ -335,6 +335,11 @@ else
                 <label for="">Phone</label>
                 <span>Phone</span>
               </div>
+              <div class="input-container">
+                <input type="text" name="subject" class="input" />
+                <label for="">Subject</label>
+                <span>Subject</span>
+              </div>
               <div class="input-container textarea">
                 <textarea name="message" class="input message"></textarea>
                 <label for="">Message</label>
@@ -380,7 +385,7 @@ function blurFunc() {
 inputs.forEach((input) => {
   input.addEventListener("focus", focusFunc);
   input.addEventListener("blur", blurFunc);
-});z
+});
     </script>
 </body>
 
